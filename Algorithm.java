@@ -42,16 +42,18 @@ public static int[] Sort(int[] array) {
 
 public static boolean isthere(int[] array, int n) {
    boolean reverse = (array[0] > array[array.length-1]);
+   int middleIndex = (array.length-1)/2;
+   int middle = array[array.length-1];
    if (reverse) {
-    if (n >= array[array.length-1]) {
-      for (int i = (array.length-1)/2; i >= 0; i--) {
+    if (n >= middle) {
+      for (int i = middleIndex; i >= 0; i--) {
         if (n == array[i]) {
           return true;
         }
       }
     }
     else {
-      for (int i = (array.length-1)/2; i <= array.length-1; i++) {
+      for (int i = middleIndex; i <= array.length-1; i++) {
         if (n == array[i]) {
           return true;
         }
@@ -59,15 +61,15 @@ public static boolean isthere(int[] array, int n) {
     }
    }
    else {
-    if (n >= array[(array.length-1)/2]) {
-      for (int i = (array.length-1)/2; i <= array.length -1 ; i++) {
+    if (n >= middle) {
+      for (int i = middleIndex; i <= array.length -1 ; i++) {
         if (n == array[i]) {
           return true;
         }
       }
     }
     else {
-      for (int i = (array.length-1)/2; i >= 0; i--) {
+      for (int i = middle; i >= 0; i--) {
         if (n == array[i]) {
           return true;
         }
