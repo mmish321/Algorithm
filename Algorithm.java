@@ -7,7 +7,11 @@ public static void main(String[] args) {
 	for(int x : sortedarray) {
   	System.out.println(x);
   }
-  System.out.println(isthere(cards, 9));
+  int [] random = {9,6,4,3,2};
+  int [] monster = {1,12,14,18,19,21,23,24,25,26,27,28,29,30,31,32,34,35,100,500,10000};
+  System.out.println(isthere(sortedarray, 9));
+  System.out.println(isthere(random, 1));
+  System.out.println(isthere(monster, 100000000));
 }
 
 public static int Max(int[] array) {
@@ -34,12 +38,47 @@ public static int[] Sort(int[] array) {
   }
  return array;
 }
+
+
 public static boolean isthere(int[] array, int n) {
-   for (int x : array) {
-   	if (x == n) {
-   		return true;
-   	}
+   boolean reverse = (array[0] > array[array.length-1]);
+   if (reverse) {
+    if (n >= array[array.length-1]) {
+      for (int i = (array.length-1)/2; i >= 0; i--) {
+        if (n == array[i]) {
+          return true;
+        }
+      }
+    }
+    else {
+      for (int i = (array.length-1)/2; i <= array.length-1; i++) {
+        if (n == array[i]) {
+          return true;
+        }
+      }
+    }
+   }
+   else {
+    if (n >= array[(array.length-1)/2]) {
+      for (int i = (array.length-1)/2; i <= array.length -1 ; i++) {
+        if (n == array[i]) {
+          return true;
+        }
+      }
+    }
+    else {
+      for (int i = (array.length-1)/2; i >= 0; i--) {
+        if (n == array[i]) {
+          return true;
+        }
+      } 
+    }
    }
    return false;
-  }
+ }
+
+
+
+
+
 }
