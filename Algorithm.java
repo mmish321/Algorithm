@@ -69,7 +69,7 @@ public static boolean isthere(int[] array, int n) {
       }
     }
     else {
-      for (int i = middle; i >= 0; i--) {
+      for (int i = middleIndex; i >= 0; i--) {
         if (n == array[i]) {
           return true;
         }
